@@ -1,0 +1,67 @@
+No,Test Case ID,Bagian,Test Scenario,Pre-conditions,Test Steps,Expected Result,Actual Result,Status Awal,Jenis Temuan,Bug ID,Status Akhir,Notes / Bug ID
+1,TC01,Main Page,Buka halaman utama,Browser terbuka,1. Buka https://kartu-ngobrol.vercel.app,"Halaman utama tampil dengan tombol ""Mulai main""",Sesuai expected result,Pass,,,Pass,
+2,TC02,Main Page,Switch bahasa Inggris,"Di halaman utama, bahasa Indonesia aktif","1. Klik tombol ""EN""",Seluruh teks UI berbahasa Inggris,Sesuai expected result,Pass,,,Pass,
+3,TC03,Main Page,Switch bahasa Indonesia,"Di halaman utama, bahasa Inggris aktif","1. Klik tombol ""ID""",Seluruh teks UI berbahasa Indonesia,Sesuai expected result,Pass,,,Pass,
+4,TC04,Sendirian Page,Main Ngoceh Satu Menit,Di halaman Sendirian,"1. Klik Ngoceh Satu Menit
+2. Pilih topik
+3. Klik Mulai main
+4. Klik Mulai waktu",Muncul kartu pertanyaan dan timer mulai berjalan,Sesuai expected result,Pass,,,Pass,
+5,TC05,Sendirian Page,Mulai timer Ngoceh Satu Menit,"Sesi Ngoceh Satu Menit terbuka, timer belum dimulai","1. Klik Mulai waktu
+2. Amati timer selama 10 detik
+3. Klik jeda dan lanjutkan","- waktu berkurang
+- animasi time bar dari penuh jadi semakin berkurang
+- animasi time bar konsisten ketika mulai, jeda, dan lanjutkan","- sesuai expected result
+- sesuai expected result
+- animasi time bar tidak konsisten karena panjang teks yang berbeda (mulai, jeda, lanjutkan). Lebih baik menggunakan ikon untuk play, pause, dan resume supaya tidak mengganggu visualisasi timer.",Fail,Bug,BUG-002,Pass,
+6,TC06,Sendirian Page,Lewati kartu,"Sesi berjalan, sisa lewati lebih dari 0",Klik Lewati kartu ini,Kartu berganti ke kartu berikutnya dan sisa lewati berkurang 1,Sesuai expected result,Pass,,,Pass,
+7,TC07,Sendirian Page,Lewati kartu ketika sisa 0,"Sesi berjalan, sisa lewati = 0",Klik Lewati kartu ini,"Tombol tidak bisa diklik, kartu tidak berganti",Sesuai expected result,Pass,,,Pass,
+8,TC08,Sendirian Page,"Tombol ""Kartu berikutnya"" sebelum waktu habis","Sesi berjalan, waktu belum habis","1. Klik ""Kartu berikutnya""",Tombol tidak bisa diklik sebelum waktu habis,Tombol masih bisa diklik dan kartu berganti,Fail,Bug,BUG-003,Pass,
+9,TC09,Sendirian Page,Mulai timer Jualan Barang Absurd,"Sesi Jualan Barang Absurd terbuka, timer belum dimulai","1. Klik Mulai waktu
+2. Amati timer selama 10 detik
+3. Klik jeda dan lanjutkan","- waktu berkurang
+- animasi time bar dari penuh jadi semakin berkurang
+- animasi time bar konsisten ketika mulai, jeda, dan lanjutkan","- sesuai expected result
+- sesuai expected result
+- animasi time bar tidak konsisten karena panjang teks yang berbeda (mulai, jeda, lanjutkan). Lebih baik menggunakan ikon untuk play, pause, dan resume supaya tidak mengganggu visualisasi timer.",Fail,Bug,BUG-002,Pass,
+10,TC10,Sendirian Page,Mulai timer Bela Yang Gak Bisa Dibela,"Sesi Bela Yang Gak Bisa Dibela terbuka, timer belum dimulai","1. Klik Mulai waktu
+2. Amati timer selama 10 detik
+3. Klik jeda dan lanjutkan","- waktu berkurang
+- animasi time bar dari penuh jadi semakin berkurang
+- animasi time bar konsisten ketika mulai, jeda, dan lanjutkan","- sesuai expected result
+- sesuai expected result
+- animasi time bar tidak konsisten karena panjang teks yang berbeda (mulai, jeda, lanjutkan). Lebih baik menggunakan ikon untuk play, pause, dan resume supaya tidak mengganggu visualisasi timer.",Fail,Bug,BUG-002,Pass,
+11,TC11,Sendirian Page,Mulai timer Jelasin ke Anak 5 Tahun,"Sesi Jelasin ke Anak 5 Tahun terbuka, timer belum dimulai","1. Klik Mulai waktu
+2. Amati timer selama 10 detik
+3. Klik jeda dan lanjutkan","- waktu berkurang
+- animasi time bar dari penuh jadi semakin berkurang
+- animasi time bar konsisten ketika mulai, jeda, dan lanjutkan","- sesuai expected result
+- sesuai expected result
+- animasi time bar tidak konsisten karena panjang teks yang berbeda (mulai, jeda, lanjutkan). Lebih baik menggunakan ikon untuk play, pause, dan resume supaya tidak mengganggu visualisasi timer.",Fail,Bug,BUG-002,Pass,
+12,TC12,Berdua Page,Main Makin Dalam,Di halaman Berdua,"1. Klik Makin Dalam
+2. Klik Mulai main
+3. Klik Mulai babak ini
+4. Klik kartunya","- Kartu terbuka dan menampilkan pertanyaan
+- Kartu tersisa 15 kartu",Sesuai expected result,Pass,,,Pass,
+13,TC13,Berdua Page,Mulai permainan dengan klik Kartu Berikutnya,"Klik Mulai Babak Ini, kartu belum menampilkan pertanyaan",1. Klik Kartu berikutnya,"Kartu terbuka dan menampilkan pertanyaan pertama, kartu tersisa 15 kartu","Kartu terbuka dan menampilkan pertanyaan, kartu tersisa 14 kartu",Fail,Bug,BUG-004,Pass,
+14,TC14,Berdua Page,Sudahi ronde Makin Dalam tanpa membuka kartu,"Klik Mulai Babak Ini, kartu belum menampilkan pertanyaan",1. Klik Sudahi & lihat ringkasan,"- Ringkasan permainan ditampilkan
+- Kartu dibuka = 0
+- Lama main = 0 menit/sekian detik/<1 menit","- Sesuai expected result 
+- Kartu dibuka = 1
+- Lama main = 1 menit",Fail,Bug,BUG-005,Pass,
+15,TC15,Sendirian Page,Mulai timer sebelum membuka kartu,"Masuk ke Ngoceh Satu Menit, timer belum dimulai, kartu belum terbuka",1. Mulai timer,Timer tidak berjalan karena kartu belum menampilkan pertanyaan,Timer berjalan,Fail,Bug,BUG-001,Pass,
+16,TC16,Rame-rame Page,Main ronde Tebak Kata,Pilih topik dan klik Mulai main,"1. Klik Mulai ronde
+2. Tunggu waktu habis","- Waktu berjalan mundur
+- Muncul ringkasan ronde",Sesuai expected result,Pass,,,Pass,
+17,TC17,Rame-rame Page,Lewati kartu Tebak Kata,Mulai ronde Tebak Kata,1. Klik tombol Lewat,"- Kartu berganti ke kartu berikutnya
+- Record kartu lewat bertambah 1",Sesuai expected result,Pass,,,Pass,
+18,TC18,Rame-rame Page,Menebak benar kartu Tebak Kata,Mulai ronde Tebak Kata,1. Klik tombol Benar,"- Kartu berganti ke kartu berikutnya
+- Record kartu benar bertambah 1",Sesuai expected result,Pass,,,Pass,
+19,TC19,Rame-rame Page,UI Tebak Kata,Mulai ronde Tebak Kata,-,Peletakan antara record dan tombolnya konsisten,"Record Benar di sebelah kiri, tombolnya di sebelah kanan, sedangkan record Lewat di sebelah kanan, tombolnya di sebelah kiri",Fail,Improvement,IMP-001,Pass,
+20,TC20,Rame-rame Page,"Klik tombol ""Kartu berikutnya"" sebelum waktu habis di Sambung Cerita",Mulai ronde Sambung Cerita,"1. Klik kartunya
+2. Klik ""Kartu berikutnya""",Tombol tidak bisa diklik sebelum waktu habis,Tombol masih bisa diklik dan kartu berganti,Fail,Bug,BUG-003,Pass,
+21,TC21,Rame-rame Page,"Klik tombol ""Kartu berikutnya"" sebelum waktu habis di Sambung Cerita (Oper HP)",Mulai ronde Sambung Cerita,"1. Klik kartunya
+2. Klik ""Kartu berikutnya""",Kartu berganti menjadi pertanyaan baru,Tampilan masuk ke Oper HP dengan pertanyaan yang sama. Mungkin lebih baik tidak perlu ada tombol ini (dihapus aja) karena otomatis masuk ke Oper HP ketika waktu habis dan jika ingin melewati pertanyaan maka bisa menggunakan tombol Lewati kartu,Fail,Change Request,CR-001,Pass,
+22,TC22,Custom Page,Menambahkan kartu custom,Masuk ke Kartu buatanmu,"1. Ketik isi kartu
+2. Klik Tambah kartu",Bisa klik Main pakai kartuku,"Tidak bisa main sebelum menambahkan 4 kartu. Saran: di bagian ""Belum ada kartu. Tulis satu di atas untuk mulai"" dikasih kayak minimal menambahkan sekian kartu untuk bisa main. ",Fail,Improvement,IMP-002,Pass,
+23,TC23,Custom Page,Menambahkan kartu custom (counter),Masuk ke Kartu buatanmu,"1. Ketik isi kartu
+2. Klik Tambah kartu",Kartu tersimpan bertambah 1,Sesuai expected result,Pass,,,Pass,

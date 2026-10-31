@@ -1,0 +1,19 @@
+ID,Judul,Jenis,Severity,Priority,Test Case Terkait,Jumlah TC,Steps to Reproduce,Expected,Actual,Status,Catatan
+BUG-001,Timer berjalan padahal kartu belum dibuka (Ngoceh Satu Menit),Bug,High,P1,TC15,1,"1. Masuk ke Ngoceh Satu Menit
+2. Tanpa membuka kartu, klik Mulai waktu",Timer tidak berjalan karena kartu belum menampilkan pertanyaan,Timer berjalan,Closed,
+BUG-002,Animasi time bar tidak konsisten karena panjang teks tombol Mulai/Jeda/Lanjutkan berbeda,Bug,Low,P3,"TC05, TC09, TC10, TC11",4,"1. Klik Mulai waktu
+2. Amati timer selama 10 detik
+3. Klik jeda lalu lanjutkan","Time bar berkurang dari penuh dan animasinya konsisten saat mulai, jeda, dan lanjutkan",Animasi time bar tidak konsisten karena panjang teks tombol berbeda,Closed,"Terjadi di 4 mode Sendirian. Saran: pakai ikon play, pause, resume agar tidak mengganggu visualisasi timer."
+BUG-003,Tombol 'Kartu berikutnya' bisa diklik sebelum waktu habis,Bug,Medium,P2,"TC08, TC20",2,"1. Mulai sesi dan buka kartu
+2. Klik 'Kartu berikutnya' sebelum waktu habis",Tombol tidak bisa diklik sebelum waktu habis,Tombol masih bisa diklik dan kartu berganti,Closed,Terjadi di Sendirian (TC09) dan Rame-rame Sambung Cerita (TC21).
+BUG-004,"Sisa kartu salah (14, seharusnya 15) saat membuka kartu pertama lewat 'Kartu berikutnya' (Makin Dalam)",Bug,Medium,P2,TC13,1,"1. Berdua > Makin Dalam > Mulai main > Mulai babak ini
+2. Tanpa membuka kartu, klik 'Kartu berikutnya'",Kartu pertama tampil dan kartu tersisa 15,"Kartu tampil, kartu tersisa 14",Closed,
+BUG-005,Ringkasan menghitung 1 kartu dibuka dan 1 menit padahal tidak ada kartu dibuka,Bug,Medium,P3,TC14,1,"1. Mulai babak Makin Dalam tanpa membuka kartu
+2. Klik 'Sudahi & lihat ringkasan'",Kartu dibuka = 0; lama main = 0 menit/sekian detik/<1 menit,Kartu dibuka = 1; lama main = 1 menit,Closed,
+IMP-001,Peletakan record dan tombol Benar/Lewat tidak simetris (Tebak Kata),Improvement,Low,P3,TC19,1,"1. Mulai ronde Tebak Kata
+2. Amati posisi record dan tombol Benar serta Lewat",Peletakan antara record dan tombolnya konsisten,"Benar: record di kiri, tombol di kanan; Lewat: record di kanan, tombol di kiri",Closed,
+IMP-002,Tambahkan petunjuk jumlah minimal kartu (4) di layar Kartu buatanmu,Improvement,Low,P3,TC22,1,"1. Masuk ke Kartu buatanmu
+2. Tambah kartu satu per satu dan coba klik Main pakai kartuku",Pengguna tahu berapa kartu minimal untuk bisa main,Tidak bisa main sebelum 4 kartu; pesan 'Belum ada kartu. Tulis satu di atas untuk mulai' tidak menyebut batas minimal,Closed,Aturan minimal 4 kartu ditemukan saat TC23; expected di TC23 sudah dikoreksi.
+CR-001,Tombol 'Kartu berikutnya' di Sambung Cerita membawa ke Oper HP dengan pertanyaan yang sama,Change Request,Low,P3,TC21,1,"1. Mulai ronde Sambung Cerita
+2. Klik kartunya
+3. Klik 'Kartu berikutnya'",Kartu berganti menjadi pertanyaan baru,Tampilan masuk ke Oper HP dengan pertanyaan yang sama,Closed,"Saran: hapus tombol ini karena otomatis masuk Oper HP saat waktu habis, dan melewati pertanyaan sudah bisa lewat 'Lewati kartu'."
