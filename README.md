@@ -31,4 +31,4 @@ Pengujian manual pada website https://kartu-ngobrol.vercel.app
 - [Bug Reports](bug-reports.csv)
 
 ## Spreadsheet Asli
-[(QA Kartu Ngobrol - Google Sheets)](https://docs.google.com/spreadsheets/d/1C4C1GA8JTUYYNjbbU_-R4Eu8Q_6LGJQY-Jg8mFKAzV8/edit?usp=sharing)
+[QA Kartu Ngobrol - Google Sheets](https://docs.google.com/spreadsheets/d/1C4C1GA8JTUYYNjbbU_-R4Eu8Q_6LGJQY-Jg8mFKAzV8/edit?usp=sharing)
